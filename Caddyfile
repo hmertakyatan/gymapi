@@ -1,0 +1,45 @@
+{
+    auto_https off
+}
+
+:80 {
+    handle {
+        root * /srv/build
+        try_files {path} /index.html
+
+		encode gzip zstd
+
+        file_server
+    }
+    
+
+    
+    handle /api/customer* {
+        reverse_proxy customer:8080
+    }
+    
+    handle /api/payment* {
+        reverse_proxy payment:8081
+    }
+    
+    handle /api/auth* {
+        reverse_proxy auth:8086
+    }
+    
+    handle /api/membership* {
+        reverse_proxy membership:8082
+    }
+    
+    handle /api/membership-type* {
+        reverse_proxy membership-type:8084
+    }
+
+    handle /api/user* {
+        reverse_proxy user:8087
+    }
+
+    handle /api/personnel* {
+        reverse_proxy personnel:8083
+    }
+    
+}

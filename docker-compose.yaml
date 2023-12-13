@@ -1,0 +1,167 @@
+version: '3'
+
+services:
+
+  user:
+    image: golang:latest
+    depends_on:
+      - db
+    command: bash -c "sleep 0 && cd /home/server/ && go run micro-services/user/main.go"
+    volumes:
+      - ./backend:/home/server
+    env_file:
+      - ./backend/api.env
+    restart: on-failure
+    ports:
+      - "8087:8087"
+    networks:
+      - api_network
+
+  customer:
+    image: golang:latest
+    depends_on:
+      - db
+    command: bash -c "sleep 0 && cd /home/server/ && go run micro-services/customer/main.go"
+    volumes:
+      - ./backend:/home/server
+    env_file:
+      - ./backend/api.env
+    restart: on-failure
+    ports:
+      - "8080:8080"
+    networks:
+      - api_network
+    
+      
+  payment:
+    image: golang:latest
+    depends_on:
+      - db
+    command: bash -c "sleep 0 && cd /home/server/ && go run micro-services/payment/main.go"
+    volumes:
+      - ./backend:/home/server
+    env_file:
+      - ./backend/api.env
+    restart: on-failure
+    ports:
+      - "8081:8081"
+    networks:
+      - api_network
+    
+
+  auth:
+    image: golang:latest
+    depends_on:
+      - db
+    command: bash -c "sleep 0 && cd /home/server/ && go run micro-services/auth/main.go"
+    volumes:
+      - ./backend:/home/server
+    env_file:
+      - ./backend/api.env
+    restart: on-failure
+    ports:
+      - "8086:8086"
+    networks:
+      - api_network
+    
+
+  membership:
+    image: golang:latest
+    depends_on:
+      - db
+    command: bash -c "sleep 0 && cd /home/server/ && go run micro-services/membership/main.go"
+    volumes:
+      - ./backend:/home/server
+      - ./backend/api.env:/home/server/api.env
+    env_file:
+      - ./backend/api.env
+    restart: on-failure
+    ports:
+      - "8082:8082"
+    networks:
+      - api_network
+   
+  
+  membership-type:
+    image: golang:latest
+    depends_on:
+      - db
+    command: bash -c "sleep 0 && cd /home/server/ && go run micro-services/membership-type/main.go"
+    volumes:
+      - ./backend:/home/server
+    env_file:
+      - ./backend/api.env
+    restart: on-failure
+    ports:
+      - "8084:8084"
+    networks:
+      - api_network
+  
+  personnel:
+    image: golang:latest
+    depends_on:
+      - db
+    command: bash -c "sleep 0 && cd /home/server/ && go run micro-services/personnel/main.go"
+    volumes:
+      - ./backend:/home/server
+    env_file:
+      - ./backend/api.env
+    restart: on-failure
+    ports:
+      - "8083:8083"
+    networks:
+      - api_network
+   
+
+  caddy:
+    image: caddy
+    container_name: caddy-container
+    restart: unless-stopped
+    cap_add:
+      - NET_ADMIN
+    ports:
+      - "80:80"
+    volumes:
+      - ./Caddyfile:/etc/caddy/Caddyfile
+      - ./frontend:/srv
+      - ./backend/static/media/customer-images:/srv/build/static/media/customer-images
+      - caddy_data:/data
+      - caddy_config:/config
+    networks:
+      - api_network
+  db:
+    image: postgres
+    container_name: postgres-container
+    restart: always
+    environment:
+      POSTGRES_USER: ${DB_USER}
+      POSTGRES_PASSWORD: ${DB_PASS}
+      POSTGRES_DB: ${DB_NAME}
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+    ports:
+      - "5432:5432"
+    networks:
+      - api_network
+
+  pgadmin:
+    image: dpage/pgadmin4
+    container_name: pgadmin-container
+    restart: always
+    environment:
+      PGADMIN_DEFAULT_EMAIL: ${ADMIN_MAIL}
+      PGADMIN_DEFAULT_PASSWORD: ${ADMIN_PASS}
+    ports:
+      - "5050:80"
+    networks:
+      - api_network
+
+volumes:
+  pgdata:
+  caddy_data:
+    external: true
+  caddy_config:
+
+networks:
+  api_network:
+    driver: bridge

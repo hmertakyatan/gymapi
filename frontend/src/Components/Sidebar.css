@@ -1,0 +1,39 @@
+.sidebar {
+    width: 500px;
+}
+.sidebarlogo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    padding: 10px;
+}
+
+.sidebarlogoicon {
+    height: 150px;
+    width: 150px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    border-radius: 50%;
+    background-color: white;
+}
+
+.menu-bar {
+    height: 88vh;
+    margin-top: flex;
+    flex-direction: column;
+    gap: 15px;
+    font-size: 14px;
+}
+
+.toggle-theme-button{
+    position: absolute;
+    bottom: 30px;
+    left: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1rem;
+}

@@ -1,0 +1,51 @@
+.customer-edit-container {
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  background-color: #747689;
+}
+
+.file-input {
+  gap: 30px; /* Dosya girişi ile araya daha fazla boşluk */
+}
+
+.preview-image {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  border: 1px solid #ccc;
+  display: block;
+  gap: 20px;
+}
+.label {
+  gap: 10px;
+}
+
+.text-input {
+  width: calc(100% - 18px);
+  padding: 8px;
+  gap: 20px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  align-items: center;
+  display: flex;
+  justify-content: center;
+}
+
+.save-button {
+  padding: 8px 16px;
+  border: none;
+  border-radius: 4px;
+  background-color: #007bff;
+  color: #fff;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.save-button:hover {
+  background-color: #0056b3;
+}

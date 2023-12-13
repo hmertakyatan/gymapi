@@ -1,0 +1,170 @@
+/* CustomerList.css */
+
+.customer-list-container {
+    max-width: 800px;
+    margin: 0 auto;
+  }
+  
+  input[type="text"] {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 16px;
+  }
+  
+  .customer-cards {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  
+  .customer-card {
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    width: 300px;
+    height: 400px; 
+    background-color: #969ee1;
+    position: relative; /* Container için pozisyon */
+    
+  }
+  
+  .customer-details {
+    flex-grow: 1;
+  }
+  
+  .customer-details h3 {
+    margin-top: 10px;
+    margin-bottom: 30px;
+  }
+  
+  .customer-details p {
+    margin-bottom: 8px;
+    color: black;
+  }
+  
+  .single-customer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+    width: 100%;
+    padding: 20px; /* Öğeler arası boşluk */
+  }
+  
+  .single-customer img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    margin-bottom: 10px;
+  }
+  
+  .customer-info h3 {
+    font-weight: bold;
+    font-size: 18px;
+    margin: 0;
+  }
+  
+  .customer-info p {
+    gap: 10px; 
+  }
+  
+  .button-container {
+    position: absolute;
+     top: 8px;
+    right: 8px;
+    display: flex;
+    flex-direction: row; /* Butonların yatayda sıralanması */
+    align-items: center;
+  }
+
+  .blur-background {
+    backdrop-filter: blur(8px);
+    pointer-events: none; /* Arkaplanda tıklamaları engellemek için */
+  }
+  
+  .button-container .delete-button,
+  .button-container .edit-button {
+    width: 20px;
+    height: 20px;
+    background-color: transparent;
+    background-size: cover;
+    background-repeat: no-repeat;
+    display: inline-block;
+    border: none;
+    cursor: pointer;
+    margin-left: 10px; /* Butonlar arası boşluk */
+  }
+  
+  .delete-button {
+    background-image: url('../Assets/icons/delete.png'); /* Silme icon resmi */
+  }
+  
+  .edit-button {
+    background-image: url('../Assets/icons/update.png'); /* Düzenleme icon resmi */
+  }
+  
+  .preview-image {
+    max-width: 200px; /* Önizleme resminin maksimum genişliği */
+    height: auto; /* Genişliğe bağlı olarak otomatik yükseklik */
+  }
+  
+  .current-preview-image {
+    max-width: 200px; /* Mevcut resmin maksimum genişliği */
+    height: auto; /* Genişliğe bağlı olarak otomatik yükseklik */
+  }
+
+  .status-button {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    display: inline-block;
+    margin-top: 10px; /* Buton ile paragraf arası boşluk */
+    position: relative;
+}
+
+.green-button::before,
+.red-button::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+}
+
+.green-button::before {
+    background-color: green;
+    box-shadow: 0 0 10px green;
+    animation: pulse-green 1s infinite alternate;
+}
+
+.red-button::before {
+    background-color: red;
+    box-shadow: 0 0 10px red;
+    animation: pulse-red 1s infinite alternate;
+}
+
+/* Animasyonlar */
+/* Yeşil animasyon */
+@keyframes pulse-green {
+    from {
+        transform: scale(1);
+        opacity: 1;
+    }
+    to {
+        transform: scale(1.2);
+        opacity: 0.5;
+    }
+}
+
+/* Kırmızı animasyon */
+@keyframes pulse-red {
+    from {
+        transform: scale(1);
+        opacity: 1;
+    }
+    to {
+        transform: scale(1.2);
+        opacity: 0.5;
+    }
+}

@@ -1,0 +1,71 @@
+/* PersonnelCreate.css */
+
+.personnel-create {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    margin-top: 50px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center; /* Buton ve içeriklerin ortalanması */
+}
+
+.form-group {
+    width: 100%;
+    margin-bottom: 15px;
+}
+.textarea-field {
+    width: 100%; /* Açıklama alanının genişliği */
+    height: 200px; /* İstediğiniz yükseklik */
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+     /* Kullanıcıların manuel olarak boyutlandırmasını devre dışı bırakır */
+    text-align: left; /* Açıklamanın metnini sola yasla */
+    overflow: auto; /* İhtiyaç duyulduğunda kaydırmayı etkinleştir */
+}
+
+.input-field-textarea {
+    height: 250px; /* Açıklama alanının yüksekliği */
+    resize: none;
+}
+
+.label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.input-field {
+    width: calc(100% - 16px); /* Alanların genişliği */
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+    margin-top: 5px;
+}
+
+.submit-button {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-top: 15px; /* Butonun üstünde bir boşluk bırakmak için */
+    width: calc(100% - 16px); /* Butonun genişliği */
+}
+
+.submit-button:hover {
+    background-color: #0056b3;
+}
+
+h2 {
+    margin-bottom: 20px;
+}

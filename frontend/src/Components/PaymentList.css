@@ -1,0 +1,43 @@
+.payment-container {
+    text-align: center;
+    padding: 20px;
+}
+
+.table-container {
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    overflow: auto;
+    max-width: 800px;
+    margin: 0 auto;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.payment-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 0;
+}
+
+.payment-table th,
+.payment-table td {
+    padding: 12px;
+    text-align: left;
+    border-bottom: 1px solid #ddd; /* Hücreler arası ince çizgi */
+    border-right: 1px solid #ddd; /* Sağ taraftaki çerçeve */
+    border-left: 1px solid #ddd; /* Sol taraftaki çerçeve */
+}
+.payment-table th {
+    background-color: #fff; /* Başlık arka planı beyaz */
+    text-align: center; /* Başlıkları ortala */
+}
+
+.payment-row {
+    border-bottom: 1px solid #ccc;
+}
+
+.payment-cell {
+    padding: 8px;
+    text-align: left;
+}
+
+
