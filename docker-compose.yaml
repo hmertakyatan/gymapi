@@ -111,6 +111,21 @@ services:
       - "8083:8083"
     networks:
       - api_network
+
+  personaltraining:
+    image: golang:latest
+    depends_on:
+      - db
+    command: bash -c "sleep 0 && cd /home/server/ && go run micro-services/personaltraining/main.go"
+    volumes:
+      - ./backend:/home/server
+    env_file:
+      - ./backend/api.env
+    restart: on-failure
+    ports:
+      - "8085:8085"
+    networks:
+      - api_network
    
 
   caddy:

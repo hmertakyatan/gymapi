@@ -118,14 +118,14 @@ const CustomerList = () => {
       <div className="customer-list-title">
         <h1>Müşteri Listesi</h1>
       </div>
-      <div className="customer-list-search">
+      
       <input
         type="text"
         placeholder="Müşteri ara..."
         value={searchTerm}
         onChange={(e) => setSearchTerm(e.target.value)}
       />
-      </div>
+      
       
       <div className="customer-cards">
         {filteredCustomers.map((customer) => (

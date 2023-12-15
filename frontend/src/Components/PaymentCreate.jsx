@@ -31,6 +31,7 @@ const PaymentCreate = () => {
                 <div className="form-group">
                     <label>Tür:</label>
                     <select className="input-field" value={type} onChange={(e) => setType(e.target.value)}>
+                        <option value="">Ödeme Tipini  Seçiniz</option>
                         <option value="in">Gelir</option>
                         <option value="out">Gider</option>
                     </select>

@@ -42,4 +42,7 @@
         reverse_proxy personnel:8083
     }
     
+    handle /api/pt* {
+        reverse_proxy personaltraining:8085
+    }
 }

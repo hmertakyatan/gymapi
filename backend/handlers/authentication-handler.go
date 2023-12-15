@@ -58,7 +58,11 @@ func (h *AuthenticationHandlerImpl) UserLogin(c *gin.Context) {
 		Message: "Kullanici girisi basarili",
 		Data:    resp,
 	}
+
 	config, err := configs.LoadConfig("/home/server/api.env")
+	if err != nil {
+		log.Println("Could not load environments", err)
+	}
 
 	c.SetCookie("access_token", access_token, config.AccessTokenMaxAge*60, "/", "localhost", false, true)
 	c.SetCookie("refresh_token", refresh_token, config.RefreshTokenMaxAge*60, "/", "localhost", false, true)

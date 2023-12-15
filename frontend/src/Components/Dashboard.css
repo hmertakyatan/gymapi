@@ -9,7 +9,14 @@
   .chart-container {
     width: 90%;
     margin-bottom: 20px;
+    height: 500px; /* İstenilen yükseklik değeri */
   }
+  element.style {
+    display: block;
+    box-sizing: border-box;
+    height: 500px;
+    width: 1190px;
+}
   
   .data-values {
     display: flex;

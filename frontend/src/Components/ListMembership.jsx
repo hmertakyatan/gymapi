@@ -45,7 +45,7 @@ const ListMembership = () => {
 
   return (
     <>
-    <h2 className="membership-title">Üyelik Listesi</h2>
+    <h1 className="membership-title">Üyelik Listesi</h1>
     <div className="membership-list-container">
       <div className="filter-and-sort">
         <div className="sort-memberships">

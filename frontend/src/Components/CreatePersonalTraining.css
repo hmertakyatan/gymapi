@@ -1,0 +1,157 @@
+/* CreateMembership.css */
+.pt-container .pt-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.personnels-container .personnel-container {
+  margin-bottom: 20px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #fff;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1); /* Light shadow */
+  width: 1050px;
+}
+
+.pt-container .customer-container.selected-customer {
+  background-color: #3498db;
+  color: white;
+  /* Diğer stillendirme özellikleri... */
+}
+
+.pt-container .personnel-details {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.pt-container .personnel-details h3 {
+  margin: 0;
+}
+
+.pt-container .personnel-details p {
+  margin: 0;
+  color: #555;
+}
+
+.pt-container .personnel-container:hover {
+  background-color: #2980b9;
+  color: white;
+}
+
+.pt-container .customer-list,
+.pt-container .personnel-list,
+.pt-container .inputs-container {
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  padding: 20px;
+  background-color: #dfdfdf;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.pt-container .customer-list ul,
+.pt-container .personnel-list ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  max-height: 300px;
+  overflow-y: auto;
+}
+
+.pt-container .customer-list ul li,
+.pt-container .personnel-list ul li {
+  padding: 8px 0;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.pt-container .customer-list ul li:hover,
+.pt-container .personnel-list ul li:hover {
+  background-color: #f9f9f9;
+}
+
+.pt-container .selected {
+  background-color: #3498db;
+  color: white;
+  font-weight: bold;
+}
+
+.pt-container .inputs-container {
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  padding: 20px;
+  background-color: #dfdfdf;
+  margin-top: 20px;
+}
+
+.pt-container .inputs-container textarea {
+  width: 50%; 
+  resize: none; 
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 14px;
+  margin-bottom: 15px;
+  height: 300px;
+}
+
+.pt-container .create-button {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  background-color: #3498db;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+/* Card style for customer-container */
+.pt-container .customer-container {
+  margin-bottom: 20px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #fff; /* White background */
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1); /* Light shadow */
+  width: 1050px;
+}
+
+.pt-container .customer-details img {
+  width: 100px; /* Desired width */
+  height: 100px; /* Desired height */
+  object-fit: cover; /* Maintain image aspect ratio */
+  border-radius: 50%;
+}
+
+.pt-container .customer-details {
+  display: flex;
+  align-items: center;
+  margin-bottom: 5px;
+}
+
+.pt-container .customer-details h3 {
+  margin: 0;
+}
+
+.pt-container .customer-details p {
+  margin: 0;
+  color: #555;
+}
+
+.pt-container .customer-container:hover {
+  background-color: #2980b9; /* Background color on hover */
+  color: white;
+}
+
+.pt-container .selected-personnel {
+  background-color: #3498db;
+  color: white;
+}
+.pt-container .selected-customer {
+  background-color: #3498db;
+  color: white;
+}

@@ -36,8 +36,15 @@ const Dashboard = () => {
               scales: {
                 y: {
                   beginAtZero: true,
+                  ticks: {
+                    maxTicksLimit: 20,
+                  },
                 },
               },
+              indexAxis: 'x', 
+              barThickness: 75, 
+              categoryPercentage: 0.8, 
+              barPercentage: 0.8, 
             },
           });
         }

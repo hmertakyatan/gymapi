@@ -21,6 +21,7 @@ import PaymentCreate from './Components/PaymentCreate';
 import PersonnelCreate from './Components/PersonnelCreate';
 import PersonnelList from './Components/PersonnelList';
 import Dashboard from './Components/Dashboard';
+import CreatePersonalTraining from './Components/CreatePersonalTraining';
 
 const { Header, Sider, Content } = Layout;
 
@@ -79,6 +80,7 @@ function App() {
                 <Route path="/create-personnel" element={<PersonnelCreate/>} />
                 <Route path="/personnel-list" element={<PersonnelList/>} />
                 <Route path="/dashboard" element={<Dashboard/>} />
+                <Route path="/create-pt" element={<CreatePersonalTraining/>} />
                 <Route path="/*" element={<NotFoundPage />} />
               </Routes>
             </Content>

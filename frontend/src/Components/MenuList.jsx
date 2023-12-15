@@ -8,6 +8,7 @@ import tlicon from "../Assets/icons/tlicon.png"
 import membershipicon from "../Assets/icons/membershipicon.png"
 import membershiptypeicon from "../Assets/icons/membertshiptypeicon.png"
 import personnelicon from "../Assets/icons/personnelicon.png"
+import coach from "../Assets/icons/coach.png"
 const iconStyle = { fontSize: '30px', width: '30px', height: '30px' };
 const MenuList = ({darkTheme}) => {
     return (
@@ -67,6 +68,17 @@ const MenuList = ({darkTheme}) => {
                     <Link to="/create-personnel">Yeni Çalışan Alımı</Link>
                 </Menu.Item>
             </Menu.SubMenu>
+
+            <Menu.SubMenu key="pttransactions" icon={<img src={coach} alt="" style={{ ...iconStyle }} />} title="Personal Training">
+                <Menu.Item key="read-pt">
+                    <Link to="/pt-list">Personal Training Listesi</Link>
+                </Menu.Item>
+                <Menu.Item key="create-personnels">
+                    <Link to="/create-pt">Personal Training Kaydı Oluştur</Link>
+                </Menu.Item>
+            </Menu.SubMenu>
+
+            
 
             
 

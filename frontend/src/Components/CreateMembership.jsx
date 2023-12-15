@@ -86,15 +86,7 @@ const CreateMembership = () => {
   <div
     key={customer.id}
     onClick={() => handleCustomerClick(customer.id)}
-    className="customer-container"
-    style={{
-      backgroundColor: selectedCustomer === customer.id ? '#3498db' : 'white',
-      color: selectedCustomer === customer.id ? 'white' : '#555',
-      border: selectedCustomer === customer.id ? '2px solid #2980b9' : '1px solid #ccc',
-      borderRadius: '5px',
-      padding: '10px',
-      marginBottom: '20px',
-    }}
+    className={`customer-container ${selectedCustomer === customer.id ? 'selected-customer' : ''}`}
   >
     <div className="customer-details">
       <img src={customer.customer_picture_url} alt="" style={{maxWidth: '100px',
@@ -125,37 +117,28 @@ const CreateMembership = () => {
   <div
     key={type.id}
     onClick={() => handleMembershipTypeClick(type.id)}
-    className="membership-type-container"
-    style={{
-      backgroundColor: selectedMembershipType === type.id ? '#3498db' : 'white',
-      color: selectedMembershipType === type.id ? 'white' : '#555',
-      border: selectedMembershipType === type.id ? '2px solid #2980b9' : '1px solid #ccc',
-      borderRadius: '5px',
-      padding: '10px',
-      marginBottom: '20px',
-    }}
+    className={`membership-type-container ${selectedMembershipType === type.id ? 'selected-membership-type' : ''}`}
   >
     <h3>{type.name}</h3>
     <p>{type.description}</p>
     <p>{type.price}</p>
   </div>
 ))}
-        </div>
+</div>
       </div>
 
       <div className="inputs-container">
-        <input
-          type="number"
-          value={amountPaid}
-          onChange={(e) => setAmountPaid(e.target.value)}
-          placeholder="Ödenen Miktar"
-        />
-
         <input
           type="text"
           value={startDateStr}
           onChange={(e) => setStartDateStr(e.target.value)}
           placeholder="Başlangıç Tarihi (gg/aa/yyyy)"
+        />
+        <input
+          type="number"
+          value={amountPaid}
+          onChange={(e) => setAmountPaid(e.target.value)}
+          placeholder="Ödenen Miktar"
         />
 
         <button className="create-button" onClick={handleCreateMembership}>

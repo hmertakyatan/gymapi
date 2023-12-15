@@ -56,7 +56,7 @@ func (h *PersonalTrainingHandlerImpl) HandlePersonalTrainingRegistration(c *gin.
 		return
 	}
 
-	paymentDescription := fmt.Sprintf("%s - icerikli egitim icin - %2.f TL ucret alindi", personelRelCustomer.Description, personelRelCustomer.Price)
+	paymentDescription := fmt.Sprintf("%s - isimli trainer ile %s isimli müşterinin personal tarining hizmeti için - %2.f TL ucret alindi", personnel.Name, customer.FullName, personelRelCustomer.Price)
 	paymentRequest := requests.DtoPaymentRequest{
 		Type:        "in",
 		Description: paymentDescription,
